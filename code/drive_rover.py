@@ -77,6 +77,29 @@ class RoverState():
         self.near_sample = 0 # Will be set to telemetry value data["near_sample"]
         self.picking_up = 0 # Will be set to telemetry value data["picking_up"]
         self.send_pickup = False # Set to True to trigger rock pickup
+        
+        ####   new 
+        self.rock_dists = None
+        self.rock_angles = None
+        self.rock_angles_detected = 10
+        self.stuck_time_initial = None
+        self.stuck_time_max_waiting = 5
+        self.is_stuck = False
+        self.random_pos_angles = 20000
+        
+        
+        self.stuck_time = None  # To record stuck time of rover
+        self.back_time = None  # To record stuck time of rover
+        self.last_sample_time = None
+        self.last_yaw = None  # To record stuck time of rover
+        
+        self.nav_angles_right = None
+        self.nav_angles_rock = None
+
+        
+        
+        
+        
 # Initialize our rover 
 Rover = RoverState()
 
